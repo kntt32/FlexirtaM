@@ -2,7 +2,7 @@ build: main.o matrix.o math.o
 	gcc $^ -lm
 
 buildlib: matrix.o math.o
-	ar r FlexirtaM.a $^
+	gcc -o FlexirtaM.so -shared -fPIC $^
 
 debug: mainDebug.o matrixDebug.o mathDebug.o
 	gcc $^ -lm -g
