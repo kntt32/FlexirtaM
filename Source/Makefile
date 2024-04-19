@@ -4,7 +4,9 @@ build: main.o matrix.o math.o
 install: FlexirtaM.so
 	cp $^ /usr/lib
 
-buildlib: matrix.o math.o
+buildlib: FlexirtaM.so
+
+FlexirtaM.so: matrix.o math.o
 	gcc -o FlexirtaM.so -shared -fPIC $^
 
 debug: mainDebug.o matrixDebug.o mathDebug.o
