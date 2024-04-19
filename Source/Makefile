@@ -1,6 +1,9 @@
 build: main.o matrix.o math.o
 	gcc $^ -lm
 
+install: FlexirtaM.so
+	cp $^ /usr/lib
+
 buildlib: matrix.o math.o
 	gcc -o FlexirtaM.so -shared -fPIC $^
 
