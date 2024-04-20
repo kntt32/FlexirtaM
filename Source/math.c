@@ -4,20 +4,19 @@
 #include <math.h>
 #include <time.h>
 
-typedef BASE_NUMBER_TYPE Matrix_BaseNumber;
-#include "FlexirtaM.h"
+#include "flexirtam_include.h"
 
 #if ENABLE_RDRAND
-unsigned long long Matrix_RdRand() {
+unsigned long long Matrix_Method(RdRand)() {
     unsigned long long result = 0;
     asm("rdrand %0" : "=r"(result));
     return result;
 }
 #endif
 
-Matrix_BaseNumber Matrix_Math_Random() {
+Matrix_BaseNumber Matrix_Method(Math_Random)() {
 #if ENABLE_RDRAND
-    return ((Matrix_BaseNumber)(Matrix_RdRand()%0x100000))/0x100000;
+    return ((Matrix_BaseNumber)(Matrix_Method(RdRand)()%0x100000))/0x100000;
 #else
     static int seedinited = 0;
     if(!seedinited) {
@@ -28,7 +27,7 @@ Matrix_BaseNumber Matrix_Math_Random() {
 #endif
 }
 
-unsigned long long Matrix_Math_Factorial(unsigned int number) {
+unsigned long long Matrix_Method(Math_Factorial)(unsigned int number) {
     if(number == 0) return 1;
     unsigned long long result = number;
     for(int i=1; i<number; i++) {
