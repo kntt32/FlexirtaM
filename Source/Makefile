@@ -2,7 +2,11 @@ build: main.o matrix.o math.o
 	gcc $^ -lm
 
 install: FlexirtaM.so
+ifeq ($(OS), Windows_NT)
+else
 	cp $^ /usr/lib
+endif
+
 
 buildlib: FlexirtaM.so
 
