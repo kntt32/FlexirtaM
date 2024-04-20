@@ -4,8 +4,7 @@
 #include <math.h>
 #include <time.h>
 
-#define Matrix_BaseNumber BASE_NUMBER_TYPE
-#include "FlexirtaM.h"
+#include "flexirtam_include.h"
 
 #if ENABLE_RDRAND
 unsigned long long Matrix_Method(RdRand)() {

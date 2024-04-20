@@ -3,9 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-#define Matrix_BaseNumber BASE_NUMBER_TYPE
-#include "FlexirtaM.h"
+#include "flexirtam_include.h"
 
 int main() {
     Matrix_double* mat1 = Matrix_double_New(2,2);

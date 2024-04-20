@@ -3,6 +3,8 @@
 
 #include "buildoption.h"
 
+#define Matrix_BaseNumber BASE_NUMBER_TYPE
+
 //matrix.c
 typedef struct {
     unsigned int width;

@@ -23,11 +23,8 @@ C言語のホスト環境標準ライブラリのみに依存している
 
 このライブラリを利用するには、
 - ソース中で`FlexirtaM.h`をインクルード
-- `FlexirtaM.h`をインクルードする前にいくつかのマクロを定義 (以下カッコ内を`buildoption.h`設定に置き換え)  
-   - `#define Matrix_BaseNumber (BASE_NUMBER_TYPE)`
-   - `#define Matrix_Struct Matrix_##(BASE_NUMBER_TYPE)`
-   - `#define Matrix_Method(name) Matrix_##(BASE_NUMBER_TYPE)##_##name`
-- `FlexirtaM.a`のリンク  
+   - `FlexirtaM.h`には、#から始まる行の削除及びインクルードガードの追加が必要
+- `FlexirtaM.so`のリンク  
 
 が必要である  
 

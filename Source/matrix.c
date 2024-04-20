@@ -6,8 +6,7 @@
 #include <math.h>
 #include <time.h>
 
-#define Matrix_BaseNumber BASE_NUMBER_TYPE
-#include "FlexirtaM.h"
+#include "flexirtam_include.h"
 
 Matrix_Struct* Matrix_Method(Constructer)(Matrix_Struct* this, const unsigned int width, const unsigned int height) {
     if(this == NULL) {
