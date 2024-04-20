@@ -23,8 +23,12 @@ C言語のホスト環境標準ライブラリのみに依存している
 
 このライブラリを利用するには、
 - ソース中で`FlexirtaM.h`をインクルード
-- `FlexirtaM.h`をインクルードする前に`Matrix_BaseNumber`型を定義  
-   これは内部処理の型であり、`buildoption.h`の設定項目`BASE_NUMBER_TYPE`のものと同じにする必要がある
+- `FlexirtaM.h`をインクルードする前にいくつかのマクロを定義 (以下カッコ内を`buildoption.h`設定に置き換え)  
+   - `#define Matrix_BaseNumber (BASE_NUMBER_TYPE)`
+   - `#define Matrix_Struct Matrix_##(BASE_NUMBER_TYPE)`
+   - `#define Matrix_Method(name) Matrix_##(BASE_NUMBER_TYPE)##_##name`
 - `FlexirtaM.a`のリンク  
 
-が必要である
+が必要である  
+
+また、`buildoption.h`内の`BASE_NUMBER_TYPE`によって関数名や型名が変化するため、数種類の`BASE_NUMBER_TYPE`のFlexirtaMを同時に使用できる
