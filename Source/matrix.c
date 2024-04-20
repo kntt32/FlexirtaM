@@ -1,4 +1,4 @@
-#include "buildoption.h"
+#include "FlexirtaM_Build.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -6,7 +6,7 @@
 #include <math.h>
 #include <time.h>
 
-#include "flexirtam_include.h"
+#include "FlexirtaM.h"
 
 Matrix_Struct* Matrix_Method(Constructer)(Matrix_Struct* this, const unsigned int width, const unsigned int height) {
     if(this == NULL) {
@@ -171,7 +171,7 @@ char* Matrix_Method(OutStr)(const Matrix_Struct* this, char* buff, unsigned int*
         neededsize += 2*this->height;
         for(unsigned int i=0; i<this->width*this->height; i++) {
             neededsize += 3;
-            sprintf(tempChar, BASE_NUMBER_CONVERT_OPARATER, this->data[i]);
+            sprintf(tempChar, MATRIX_BASE_NUMBER_CONVERT_OPARATER, this->data[i]);
             for(int k=0; k<sizeof(tempChar); k++) {
                 if(tempChar[k] == '\0') {
                     neededsize += k;
@@ -202,7 +202,7 @@ char* Matrix_Method(OutStr)(const Matrix_Struct* this, char* buff, unsigned int*
                 strcat(buff, ", ");
             }
             tempChar[0] = '\0';
-            sprintf(tempChar, BASE_NUMBER_CONVERT_OPARATER, this->data[k+i*this->width]);
+            sprintf(tempChar, MATRIX_BASE_NUMBER_CONVERT_OPARATER, this->data[k+i*this->width]);
             strcat(buff, tempChar);
         }
         strcat(buff, " }\n");
