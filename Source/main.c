@@ -1,9 +1,9 @@
-#include "buildoption.h"
+#include "FlexirtaM_Build.h"
 
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "flexirtam_include.h"
+#include "FlexirtaM.h"
 
 int main() {
     Matrix_double* mat1 = Matrix_double_New(2,2);
