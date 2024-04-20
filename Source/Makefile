@@ -1,14 +1,14 @@
 build: main.o matrix.o math.o
 	gcc $^ -lm
 
-install: FlexirtaM.so FlexirtaM.h
+install: FlexirtaM.so
 ifeq ($(OS), Windows_NT)
 else
 	cp $^ /usr/lib
 endif
 
 
-buildlib: FlexirtaM.so FlexirtaM.h
+buildlib: FlexirtaM.so
 
 FlexirtaM.so: matrix.o math.o
 	gcc -o FlexirtaM.so -shared -fPIC $^
@@ -16,11 +16,9 @@ FlexirtaM.so: matrix.o math.o
 debug: mainDebug.o matrixDebug.o mathDebug.o
 	gcc $^ -lm -g
 
-main.o: main.c flexirtam_include.h buildoption.h
-matrix.o: matrix.c flexirtam_include.h buildoption.h
-math.o: math.c flexirtam_include.h buildoption.h
-FlexirtaM.h: flexirtam_include.h buildoption.h
-	gcc $< -E >> FlexirtaM.h
+main.o: main.c FlexirtaM.h FlexirtaM_Build.h
+matrix.o: matrix.c FlexirtaM.h FlexirtaM_Build.h
+math.o: math.c FlexirtaM.h FlexirtaM_Build.h
 
 %.o: %.c
 	gcc -c $<
