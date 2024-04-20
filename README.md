@@ -22,10 +22,10 @@ C言語のホスト環境標準ライブラリのみに依存している
 ビルドは`make buildlib`で行う  
 
 このライブラリを利用するには、
+- ソース中で`FlexirtaM_Build.h`をインクルード
 - ソース中で`FlexirtaM.h`をインクルード
-   - `FlexirtaM.h`には、#から始まる行の削除及びインクルードガードの追加が必要
 - `FlexirtaM.so`のリンク  
 
 が必要である  
 
-また、`buildoption.h`内の`BASE_NUMBER_TYPE`によって関数名や型名が変化するため、数種類の`BASE_NUMBER_TYPE`のFlexirtaMを同時に使用できる
+また、`buildoption.h`内の`BASE_NUMBER_TYPE`によって関数名や型名が異なるため、数種類の`BASE_NUMBER_TYPE`のFlexirtaMを同時に使用できる
