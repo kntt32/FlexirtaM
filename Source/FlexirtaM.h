@@ -1,9 +1,6 @@
-#ifndef INCLUDED_MATLIB
-#define INCLUDED_MATLIB
+#pragma once
 
-#include "buildoption.h"
-
-#define Matrix_BaseNumber BASE_NUMBER_TYPE
+#define Matrix_BaseNumber MATRIX_BASE_NUMBER_TYPE
 
 //matrix.c
 typedef struct {
@@ -62,5 +59,3 @@ Matrix_BaseNumber Matrix_Method(Sgn)(const Matrix_Struct* this);//sgn()
 //math.c
 Matrix_BaseNumber Matrix_Method(Math_Random)();//乱数生成 x64のみサポート
 unsigned long long Matrix_Method(Math_Factorial)(unsigned int number);//階上
-
-#endif
