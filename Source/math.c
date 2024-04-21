@@ -4,8 +4,6 @@
 #include <math.h>
 #include <time.h>
 
-#include "FlexirtaM.h"
-
 #if MATRIX_ENABLE_RDRAND
 static unsigned long long Matrix_Method(RdRand)() {
     unsigned long long result = 0;

@@ -19,15 +19,17 @@
 #undef MATRIX_ENABLE_MULTITHREAD
 #endif
 
-#define MATRIX_BASE_NUMBER_TYPE double
+#define MATRIX_BASE_NUMBER_TYPE float
     //数値の内部表記を設定
-#define Matrix_Struct Matrix_##double
+#define Matrix_Struct Matrix_##float
     //型の名称
-#define Matrix_Method(name) Matrix_##double##_##name
+#define Matrix_Method(name) Matrix_##float##_##name
     //メゾッドの名前
-#define MATRIX_BASE_NUMBER_CONVERT_OPARATER "%lf"
+#define MATRIX_BASE_NUMBER_CONVERT_OPARATER "%f"
     //BASE_NUMBER_TYPE型の変換演算子
 #define MATRIX_ENABLE_RDRAND 1
     //RDRAND命令を使用する　x64のみサポート
 #define MATRIX_ENABLE_MULTITHREAD 1
     //マルチスレッドを使用する未サポート
+
+#include <FlexirtaM.h>

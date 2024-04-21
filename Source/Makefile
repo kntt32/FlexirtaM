@@ -16,15 +16,13 @@ FlexirtaM.so: matrix.o math.o
 debug: mainDebug.o matrixDebug.o mathDebug.o
 	gcc $^ -lm -g
 
-main.o: main.c FlexirtaM.h FlexirtaM_Build.h
-matrix.o: matrix.c FlexirtaM.h FlexirtaM_Build.h
-math.o: math.c FlexirtaM.h FlexirtaM_Build.h
+main.o: main.c FlexirtaM_Build.h
+matrix.o: matrix.c FlexirtaM_Build.h
+math.o: math.c FlexirtaM_Build.h
 
 %.o: %.c
-	gcc -c $<
+	gcc -I include -c $<
 
-%.o: %.s
-	gcc -c $<
 
 clean:
 ifeq ($(OS), Windows_NT)

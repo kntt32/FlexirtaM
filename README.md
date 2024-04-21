@@ -22,8 +22,8 @@ C言語のホスト環境標準ライブラリのみに依存している
 ビルドは`make buildlib`で行う  
 
 このライブラリを利用するには、
+- インクルードパスに`FlexirtaM_Build.h`及び`FlexirtaM.h`の配置
 - ソース中で`FlexirtaM_Build.h`をインクルード
-- ソース中で`FlexirtaM.h`をインクルード
 - `FlexirtaM.so`のリンク  
 
 が必要である  

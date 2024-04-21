@@ -1,5 +1,3 @@
-#pragma once
-
 #define Matrix_BaseNumber MATRIX_BASE_NUMBER_TYPE
 
 //matrix.c

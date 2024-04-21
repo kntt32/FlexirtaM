@@ -3,8 +3,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "FlexirtaM.h"
-
 int main() {
     Matrix_double* mat1 = Matrix_double_New(2,2);
     Matrix_double* mat2 = Matrix_double_New(2,2);
