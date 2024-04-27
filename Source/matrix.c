@@ -130,6 +130,14 @@ Matrix_Struct* Matrix_Method(Random)(Matrix_Struct* this, const unsigned int wid
     return this;
 }
 
+Matrix_Struct* Matrix_Method(Random_Wide)(Matrix_Struct* this, const unsigned int width, const unsigned int height, const Matrix_BaseNumber multnum) {
+    if(this == NULL) return NULL;
+    Matrix_Method(Reset)(this, width, height);
+    for(unsigned int i=0; i<width*height; i++) {
+        this->data[i] = Matrix_Method(Math_Random)()*multnum;
+    }
+}
+
 Matrix_Struct* Matrix_Method(SignedRandom)(Matrix_Struct* this, const unsigned int width, const unsigned int height) {
     if(this == NULL) return NULL;
     Matrix_Method(Reset)(this, width, height);
