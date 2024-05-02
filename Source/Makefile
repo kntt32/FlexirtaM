@@ -21,7 +21,7 @@ matrix.o: matrix.c FlexirtaM_Build.h
 math.o: math.c FlexirtaM_Build.h
 
 %.o: %.c
-	gcc -I include -c $<
+	gcc -I include -Ofast -c $<
 
 
 clean:
